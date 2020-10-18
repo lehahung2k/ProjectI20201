@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="HungMp3.InterfaceApp"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HungMp3"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1024">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="180"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <!--Nút quay lại list-->
+        <Grid Grid.Row="0">
+            <Button Click="Button_Click">Back</Button>
+        </Grid>
+        <!--Điều khiển-->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <!--Các nút điều khiển-->
+            <Grid Grid.Row="0">
+                <Button Width="60" Margin="429,0,535,0.4">Play</Button>
+                <Button Width="60" Margin="513,0,451,0.4">Pause</Button>
+            </Grid>
+            <Grid Grid.Row="1">
+                <TextBlock>Điều khiển thời gian và âm lượng tại đây</TextBlock>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2" Background="AliceBlue">
+            <TextBlock>Tên bài hát, tên ca sĩ, tên nhạc sĩ</TextBlock>
+        </Grid>
+        <Grid Grid.Row="3">
+            <TextBlock>Lyric(Nếu có)</TextBlock>
+        </Grid>
+    </Grid>
+</UserControl>
