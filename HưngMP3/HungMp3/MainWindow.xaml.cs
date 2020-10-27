@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using xNet;
 
 namespace HungMp3
 {
@@ -71,16 +74,48 @@ namespace HungMp3
                 OnPropertyChanged("IsListNgheNhieu");
             } 
         }
+        //danh sách
+        private List<Song> listVN;
+        private List<Song> listUS;
+        private List<Song> listYeuThich;
+        private List<Song> listNgheNhieu;
 
-        public MainWindow()
+        public List<Song> ListVN { get => listVN; set => listVN = value; }
+        public List<Song> ListUS { get => listUS; set => listUS = value; }
+        public List<Song> ListYeuThich { get => listYeuThich; set => listYeuThich = value; }
+        public List<Song> ListNgheNhieu { get => listNgheNhieu; set => listNgheNhieu = value; }
+
+        //crawl data:
+        void CrawlData()
         {
-            InitializeComponent();
-            songControl.BackToList += SongControl_BackToList;
-            listMenu.ItemsSource = new List<String>() { "", "", "", "", "", "", "", "", "", "" };
-            this.DataContext = this;
+            HttpRequest http = new HttpRequest();
 
-            IsListVN = true;
-            
+            string htmlData = http.Get(@"https://www.nhaccuatui.com/bai-hat/top-20.nhac-viet.html").ToString();
+            string htmlPattern = @"<div class=""box_resource_slide"">(.*?)</div>";
+            var listBXH = Regex.Matches(htmlData, htmlPattern, RegexOptions.Singleline);
+
+            string bxhVN = listBXH[0].ToString();
+            AddSongToList(ListVN, bxhVN);
+        }
+
+        void AddSongToList(List<Song> listSong, string html)
+        {
+            var listSongHtml = Regex.Matches(html, @"<li>(.*?)</li>", RegexOptions.Singleline);
+            for (int i = 0; i < listSongHtml.Count; i++)
+            {
+                var song = Regex.Matches(listSongHtml[i].ToString(), @"<a\s\S*\stitle=""(.*?)""", RegexOptions.Singleline);
+                var singer = Regex.Matches(listSongHtml[i].ToString(), @"", RegexOptions.Singleline);
+
+                string songString = song[0].ToString();
+                int indexSong = songString.IndexOf("title=\"");
+
+                string songName = songString.Substring(songString.IndexOf("title=\""), songString.Length - indexSong - 1).Replace("title=\"", "");
+
+                int indexUrl = songString.IndexOf("href=\"");
+                string urlSong = songString.Substring(indexUrl, indexSong - indexUrl - 2).Replace("href=\"", "");
+
+                listSong.Add(new Song { SingerName = "", SongName = songName, SongUrl = urlSong, STT = i + 1 });
+            }
         }
 
         //Từ trình phát nhạc back về playlist
@@ -101,6 +136,24 @@ namespace HungMp3
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(newName));
+        }
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            songControl.BackToList += SongControl_BackToList;
+            listMenu.ItemsSource = new List<String>() { "", "", "", "", "", "", "", "", "", "" };
+            this.DataContext = this;
+
+            IsListVN = true;
+
+            ListVN = new List<Song>();
+            ListUS = new List<Song>();
+            ListYeuThich = new List<Song>();
+            ListNgheNhieu = new List<Song>();
+
+            CrawlData();
+
         }
     }
 }

@@ -26,20 +26,52 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0" Background="MistyRose">
-                    <Image Source="https://vcdn-ngoisao.vnecdn.net/2020/07/06/106218502-2645924665508647-930-9909-9401-1594021704.jpg" Stretch="UniformToFill"/>
-                    <ToggleButton Height="30" Margin="0,0,0.4,170" IsChecked="{Binding IsListVN}"> BXH Việt Nam</ToggleButton>
+                    <Image Source="D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\Resources\nhacvn.jpg" Stretch="UniformToFill"/>
+                    <ToggleButton Height="30" Margin="0,0,0.4,170" IsChecked="{Binding IsListVN}">
+                        <ToggleButton.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="white" Offset="1"/>
+                                <GradientStop Color="orange"/>
+                            </LinearGradientBrush>
+                        </ToggleButton.Background>
+                        BXH Việt Nam
+                    </ToggleButton>
                 </Grid>
                 <Grid Grid.Column="1" Background="WhiteSmoke">
-                    <Image Source="https://cdn.zenquiz.net/external/2016/08/28/04/801dd2c0-6cd9-11e6-b568-050901070303-compressed.jpg" Stretch="Fill"></Image>
-                    <ToggleButton Height="30" Margin="0,0,0.4,170" IsChecked="{Binding IsListUS}"> BXH Âu Mỹ </ToggleButton>
+                    <Image Source="D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\Resources\nhacusuk.jpg" Stretch="Fill"></Image>
+                    <ToggleButton Height="30" Margin="0,0,0.4,170" IsChecked="{Binding IsListUS}">
+                        <ToggleButton.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="red" Offset="1"/>
+                                <GradientStop Color="white"/>
+                            </LinearGradientBrush>
+                        </ToggleButton.Background>
+                        BXH Âu Mỹ 
+                    </ToggleButton>
                 </Grid>
                 <Grid Grid.Column="2" Background="Azure">
-                    <Image Source="https://thumbs.dreamstime.com/b/my-favorite-song-black-white-hand-lettering-inscription-motivational-inspirational-positive-quote-calligraphy-vector-96414623.jpg"></Image>
-                    <ToggleButton Height="30" Margin="0,0,0.4,170" IsChecked="{Binding IsListYeuThich}">Nhạc yêu thích</ToggleButton>
+                    <Image Source="D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\Resources\nhacyeuthich.jpg"></Image>
+                    <ToggleButton Height="30" Margin="0,0,0.4,170" IsChecked="{Binding IsListYeuThich}">
+                        <ToggleButton.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="pink" Offset="1"/>
+                                <GradientStop Color="Yellow"/>
+                            </LinearGradientBrush>
+                        </ToggleButton.Background>
+                        Nhạc yêu thích
+                    </ToggleButton>
                 </Grid>
                 <Grid Grid.Column="3" Background="Pink">
-                    <Image Source="https://images.squarespace-cdn.com/content/v1/597d28d0c534a5837f72c8f6/1574195272439-33L6ZECXXUIHNQGPRJU3/ke17ZwdGBToddI8pDm48kNiEM88mrzHRsd1mQ3bxVct7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0topjEaZcWjtmMYdCWL4dkGbxs35J-ZjFa9s1e3LsxrX8g4qcOj2k2AL08mW_Htcgg/Love%3EFear+CD+cover.png" Stretch="UniformToFill"></Image>
-                    <ToggleButton Height="30" Margin="0,0,0.4,170" IsChecked="{Binding IsListNgheNhieu}">Nhạc nghe nhiều nhất</ToggleButton>
+                    <Image Source="D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\Resources\Love.png" Stretch="UniformToFill"></Image>
+                    <ToggleButton Height="30" Margin="0,0,0.4,170" IsChecked="{Binding IsListNgheNhieu}">
+                        <ToggleButton.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="MediumVioletRed" Offset="1"/>
+                                <GradientStop Color="pink"/>
+                            </LinearGradientBrush>
+                        </ToggleButton.Background>
+                        Nhạc nghe nhiều nhất
+                    </ToggleButton>
                 </Grid>
             </Grid>
             <!--List cụ thể-->
