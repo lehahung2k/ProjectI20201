@@ -97,7 +97,7 @@
                                         </Grid.RowDefinitions>
 
                                         <Grid Background="Beige">
-                                            <TextBlock HorizontalAlignment="Left">Tên bài hát</TextBlock>
+                                            <TextBlock HorizontalAlignment="Left" Text="{Binding SongName}"></TextBlock>
                                         </Grid>
                                         <Grid Grid.Row="1" Background="Coral">
                                             <TextBlock HorizontalAlignment="Left">Ca sĩ thể hiện</TextBlock>

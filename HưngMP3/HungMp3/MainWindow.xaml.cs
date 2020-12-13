@@ -37,7 +37,7 @@ namespace HungMp3
         public bool IsListVN { 
             get => isListVN; 
             set { 
-                isListVN = value; isListUS = false; isListYeuThich = false; isListNgheNhieu = false;
+                isListVN = value; listMenu.ItemsSource = ListVN; isListUS = false; isListYeuThich = false; isListNgheNhieu = false;
                 OnPropertyChanged("IsListVN");   //Xác định sự kiện để cập nhật trên màn hình
                 OnPropertyChanged("IsListUS");
                 OnPropertyChanged("IsListYeuThich");
@@ -67,7 +67,7 @@ namespace HungMp3
         public bool IsListUS { 
             get => isListUS; 
             set { 
-                isListUS = value; isListVN = false; isListYeuThich = false; isListNgheNhieu = false;
+                isListUS = value; listMenu.ItemsSource = ListUS; isListVN = false; isListYeuThich = false; isListNgheNhieu = false;
                 OnPropertyChanged("IsListVN");
                 OnPropertyChanged("IsListUS");
                 OnPropertyChanged("IsListYeuThich");
@@ -96,6 +96,9 @@ namespace HungMp3
 
             string bxhVN = listBXH[0].ToString();
             AddSongToList(ListVN, bxhVN);
+
+            string bxhUS = listBXH[0].ToString();
+            AddSongToList(ListUS, bxhUS);
         }
 
         void AddSongToList(List<Song> listSong, string html)
@@ -103,7 +106,7 @@ namespace HungMp3
             var listSongHtml = Regex.Matches(html, @"<li>(.*?)</li>", RegexOptions.Singleline);
             for (int i = 0; i < listSongHtml.Count; i++)
             {
-                var song = Regex.Matches(listSongHtml[i].ToString(), @"<a\s\S*\stitle=""(.*?)""", RegexOptions.Singleline);
+                var song = Regex.Matches(listSongHtml[i].ToString(), @"<a\s\S*\slp=""\s\S*\s\S*\shref=""(.*?)""", RegexOptions.Singleline);
                 var singer = Regex.Matches(listSongHtml[i].ToString(), @"", RegexOptions.Singleline);
 
                 string songString = song[0].ToString();
@@ -142,7 +145,6 @@ namespace HungMp3
         {
             InitializeComponent();
             songControl.BackToList += SongControl_BackToList;
-            listMenu.ItemsSource = new List<String>() { "", "", "", "", "", "", "", "", "", "" };
             this.DataContext = this;
 
             IsListVN = true;
