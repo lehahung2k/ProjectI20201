@@ -91,19 +91,19 @@ namespace HungMp3
             HttpRequest http = new HttpRequest();
 
             string htmlData = http.Get(@"https://www.nhaccuatui.com/bai-hat/top-20.nhac-viet.html").ToString();
-            string htmlPattern = @"<div class=""box_resource_slide"">(.*?)</div>";
+            string htmlPattern = @"<div class=""bxh_tab_content bxh_tab_content_1"" style=""display: block;"">(.*?)</ul>";
             var listBXH = Regex.Matches(htmlData, htmlPattern, RegexOptions.Singleline);
 
             string bxhVN = listBXH[0].ToString();
             AddSongToList(ListVN, bxhVN);
 
-            string bxhUS = listBXH[0].ToString();
+            string bxhUS = listBXH[1].ToString();
             AddSongToList(ListUS, bxhUS);
         }
 
         void AddSongToList(List<Song> listSong, string html)
         {
-            var listSongHtml = Regex.Matches(html, @"<li>(.*?)</li>", RegexOptions.Singleline);
+            var listSongHtml = Regex.Matches(html, @"<li\s\S*(.*?)</li>", RegexOptions.Singleline);
             for (int i = 0; i < listSongHtml.Count; i++)
             {
                 var song = Regex.Matches(listSongHtml[i].ToString(), @"<a\s\S*\slp=""\s\S*\s\S*\shref=""(.*?)""", RegexOptions.Singleline);
@@ -115,7 +115,7 @@ namespace HungMp3
                 string songName = songString.Substring(songString.IndexOf("title=\""), songString.Length - indexSong - 1).Replace("title=\"", "");
 
                 int indexUrl = songString.IndexOf("href=\"");
-                string urlSong = songString.Substring(indexUrl, indexSong - indexUrl - 2).Replace("href=\"", "");
+                string urlSong = songString.Substring(indexUrl).Replace("href=\"", "");
 
                 listSong.Add(new Song { SingerName = "", SongName = songName, SongUrl = urlSong, STT = i + 1 });
             }
@@ -138,7 +138,9 @@ namespace HungMp3
         protected virtual void OnPropertyChanged(string newName)
         {
             if (PropertyChanged != null)
+            {
                 PropertyChanged(this, new PropertyChangedEventArgs(newName));
+            }       
         }
 
         public MainWindow()
