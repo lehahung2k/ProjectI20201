@@ -91,22 +91,28 @@ namespace HungMp3
             HttpRequest http = new HttpRequest();
 
             string htmlData = http.Get(@"https://www.nhaccuatui.com/bai-hat/top-20.nhac-viet.html").ToString();
-            string htmlPattern = @"<div class=""bxh_tab_content bxh_tab_content_1"" style=""display: block;"">(.*?)</ul>";
+            string htmlPattern = @"<div class=""box_resource_slide"">(.*?)</ul>";
             var listBXH = Regex.Matches(htmlData, htmlPattern, RegexOptions.Singleline);
 
             string bxhVN = listBXH[0].ToString();
             AddSongToList(ListVN, bxhVN);
 
-            string bxhUS = listBXH[1].ToString();
+            //US=UK:
+            string htmlData0 = http.Get(@"https://www.nhaccuatui.com/bai-hat/top-20.au-my.html").ToString();
+            string htmlPattern0 = @"<div class=""box_resource_slide"">(.*?)</ul>";
+            var listBXH1 = Regex.Matches(htmlData0, htmlPattern0, RegexOptions.Singleline);
+
+            string bxhUS = listBXH1[0].ToString();
             AddSongToList(ListUS, bxhUS);
         }
 
+        //thêm bài hát vào danh sách
         void AddSongToList(List<Song> listSong, string html)
         {
-            var listSongHtml = Regex.Matches(html, @"<li\s\S*(.*?)</li>", RegexOptions.Singleline);
+            var listSongHtml = Regex.Matches(html, @"<li>(.*?)</li>", RegexOptions.Singleline);
             for (int i = 0; i < listSongHtml.Count; i++)
             {
-                var song = Regex.Matches(listSongHtml[i].ToString(), @"<a\s\S*\slp=""\s\S*\s\S*\shref=""(.*?)""", RegexOptions.Singleline);
+                var song = Regex.Matches(listSongHtml[i].ToString(), @"<a\shref=""https://(.*?)\stitle=""(.*?)""", RegexOptions.Singleline);
                 var singer = Regex.Matches(listSongHtml[i].ToString(), @"", RegexOptions.Singleline);
 
                 string songString = song[0].ToString();
@@ -115,7 +121,7 @@ namespace HungMp3
                 string songName = songString.Substring(songString.IndexOf("title=\""), songString.Length - indexSong - 1).Replace("title=\"", "");
 
                 int indexUrl = songString.IndexOf("href=\"");
-                string urlSong = songString.Substring(indexUrl).Replace("href=\"", "");
+                string urlSong = songString.Substring(indexUrl, indexSong - indexUrl - 2);
 
                 listSong.Add(new Song { SingerName = "", SongName = songName, SongUrl = urlSong, STT = i + 1 });
             }

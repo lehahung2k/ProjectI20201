@@ -91,16 +91,10 @@
                                     </Grid>
 
                                     <Grid Grid.Column="1">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition></RowDefinition>
-                                            <RowDefinition></RowDefinition>
-                                        </Grid.RowDefinitions>
+                                       
 
                                         <Grid Background="Beige">
                                             <TextBlock HorizontalAlignment="Left" Text="{Binding SongName}"></TextBlock>
-                                        </Grid>
-                                        <Grid Grid.Row="1" Background="Coral">
-                                            <TextBlock HorizontalAlignment="Left">Ca sĩ thể hiện</TextBlock>
                                         </Grid>
                                     </Grid>
                                 </Grid>
