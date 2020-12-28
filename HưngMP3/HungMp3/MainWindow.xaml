@@ -84,19 +84,23 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="30"></ColumnDefinition>
                                         <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
 
                                     <Grid Background="AliceBlue">
-                                        <TextBlock HorizontalAlignment="Center">1st</TextBlock>
+                                        <TextBlock HorizontalAlignment="Center" Text="{Binding STT}"></TextBlock>
                                     </Grid>
 
                                     <Grid Grid.Column="1">
-                                       
-
                                         <Grid Background="Beige">
                                             <TextBlock HorizontalAlignment="Left" Text="{Binding SongName}"></TextBlock>
                                         </Grid>
                                     </Grid>
+
+                                    <Grid Grid.Column="2">
+                                        <Button Click="Button_Click">Like</Button>
+                                    </Grid>
+                                
                                 </Grid>
                             </Border>
                         </DataTemplate>
@@ -104,6 +108,7 @@
                 </ListBox>
             </Grid>
         </Grid>
-        <uc:InterfaceApp x:Name="songControl" Visibility="Hidden"></uc:InterfaceApp>
+        <uc:InterfaceApp PreviousClick="songControl_PreviousClick" NextClick="songControl_NextClick"
+                         x:Name="songControl" Visibility="Hidden"></uc:InterfaceApp>
     </Grid>
 </Window>

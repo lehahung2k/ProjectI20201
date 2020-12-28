@@ -9,8 +9,8 @@
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
-            <RowDefinition Height="180"></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <!--Nút quay lại list-->
@@ -20,23 +20,57 @@
         <!--Điều khiển-->
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="70"></RowDefinition>
                 <RowDefinition></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
             </Grid.RowDefinitions>
             <!--Các nút điều khiển-->
             <Grid Grid.Row="0">
-                <Button Width="60" Margin="429,0,535,0.4">Play</Button>
-                <Button Width="60" Margin="513,0,451,0.4">Pause</Button>
+                <Image Source="https://vietthuong.vn/upload/content/images/tu-van/t-8/co-am-nhac-cuoc-song-tuoi-dep-hon-1.gif"></Image>
+                <TextBlock>Ảnh</TextBlock>
             </Grid>
             <Grid Grid.Row="1">
-                <TextBlock>Điều khiển thời gian và âm lượng tại đây</TextBlock>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Background="AliceBlue">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <MediaElement x:Name="audio" Width="0" Height="25" LoadedBehavior="Manual"
+                                  Source="{Binding SavePath}" MediaOpened="audio_MediaOpened"></MediaElement>
+                    <TextBlock Grid.Column="0" x:Name="timeDuration" 
+                               HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    <Slider x:Name="audioDuration"
+                            PreviewMouseDown="audioDuration_MouseDown" PreviewMouseUp="audioDuration_MouseUp"
+                            HorizontalAlignment="Stretch" ValueChanged="audioDuration_ValueChanged"
+                            Width="auto" Maximum="{Binding Duration}" Grid.ColumnSpan="2" Margin="50,10,0.4,5.2"/>
+                    <TextBlock Grid.Column="2" x:Name="timeEnd"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="2" x:Name="btnPlay" Click="Button_Click_1">Play</Button>
+                    <Button Grid.Column="1" Click="Button_Click_2">Previous</Button>
+                    <Button Grid.Column="3" Click="Button_Click_3">Next</Button>
+                </Grid>
             </Grid>
         </Grid>
         <Grid Grid.Row="2" Background="AliceBlue">
-            <TextBlock>Tên bài hát, tên ca sĩ, tên nhạc sĩ</TextBlock>
+            <TextBlock Text="{Binding SongName}" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
         </Grid>
         <Grid Grid.Row="3">
-            <TextBlock>Lyric(Nếu có)</TextBlock>
+            <ScrollViewer>
+                <TextBlock x:Name="textLyric" Text="{Binding Lyrics}"></TextBlock>
+            </ScrollViewer>
         </Grid>
     </Grid>
 </UserControl>
