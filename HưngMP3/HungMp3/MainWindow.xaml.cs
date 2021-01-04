@@ -78,14 +78,14 @@ namespace HungMp3
         //danh sách
         private ObservableCollection<Song> listVN;
         private ObservableCollection<Song> listUS;
-        private List<Song> listYeuThich;
+        private ObservableCollection<Song> listYeuThich;
         private List<Song> listNgheNhieu;
 
         private Song currentSong;
 
         public ObservableCollection<Song> ListVN { get => listVN; set => listVN = value; }
         public ObservableCollection<Song> ListUS { get => listUS; set => listUS = value; }
-        public List<Song> ListYeuThich { get => listYeuThich; set => listYeuThich = value; }
+        public ObservableCollection<Song> ListYeuThich { get => listYeuThich; set => listYeuThich = value; }
         public List<Song> ListNgheNhieu { get => listNgheNhieu; set => listNgheNhieu = value; }
 
         //crawl data:
@@ -116,7 +116,6 @@ namespace HungMp3
             for (int i = 0; i < listSongHtml.Count; i++)
             {
                 var song = Regex.Matches(listSongHtml[i].ToString(), @"<a\shref=""https://(.*?)\stitle=""(.*?)""", RegexOptions.Singleline);
-                var singer = Regex.Matches(listSongHtml[i].ToString(), @"", RegexOptions.Singleline);
 
                 string songString = song[0].ToString();
                 int indexSong = songString.IndexOf("title=\"");
@@ -126,6 +125,12 @@ namespace HungMp3
                 //lấy link bài hát
                 int indexUrl = songString.IndexOf("https");
                 string urlSong = songString.Substring(indexUrl, indexSong - indexUrl - 2);
+
+                //Lấy ảnh bài hát:
+                string imgUrl = Regex.Match(listSongHtml[i].ToString(), @"<img\ssrc=\""(.*?)""", RegexOptions.Singleline).Value;
+                string imageUrl = imgUrl.Replace("<img src=\"", "").Replace("\"", "");
+                //imageUrl = imageUrl.Replace("<img src=\"", "").Replace("\"", "");
+
 
                 //Lấy lyrics:
                 HttpRequest http = new HttpRequest();
@@ -138,17 +143,17 @@ namespace HungMp3
                                     .ToString()
                                     .Replace("<p id=\"divLyric\" class=\"pd_lyric trans\" style=\"height:auto;max-height:255px;overflow:hidden;\">", "");
                     tempLyric = tempLyric.Replace("<br />", "").Replace("</p>", "");
+                    
+
                 }
                 //Lấy url để download
                 string downloadUrl = Regex.Match(htmlSong, @"<iframe\ssrc=""https://www.n(.*?)""", RegexOptions.Singleline).Value;
                 downloadUrl = downloadUrl.Replace("<iframe src=\"", "").Replace("\"", "");
-                //Lấy ảnh bài hát:
-                //string imageUrl = Regex.Match(htmlSong, @"", RegexOptions.Singleline).Value;
-
+               
                 //Lấy đường dẫn trên máy:
                 string savePath = AppDomain.CurrentDomain.BaseDirectory + "Song\\" + songName + ".mp3";
 
-                listSong.Add(new Song() {SongName = songName, SongUrl = urlSong, STT = i + 1, Lyrics = tempLyric, DownloadUrl = downloadUrl, SavePath = savePath });
+                listSong.Add(new Song() {SongName = songName, SongUrl = urlSong, STT = i + 1, Lyrics = tempLyric, DownloadUrl = downloadUrl, SavePath = savePath, ImageUrl = imageUrl });
             }
         }
 
@@ -175,7 +180,8 @@ namespace HungMp3
         {
             
         }
-        //Binding 
+
+        //Binding từ giao diện sang code
         protected virtual void OnPropertyChanged(string newName)
         {
             if (PropertyChanged != null)
@@ -192,7 +198,7 @@ namespace HungMp3
 
             ListVN = new ObservableCollection<Song>();
             ListUS = new ObservableCollection<Song>();
-            ListYeuThich = new List<Song>();
+            ListYeuThich = new ObservableCollection<Song>();
             ListNgheNhieu = new List<Song>();
 
             CrawlData();
@@ -205,6 +211,7 @@ namespace HungMp3
         void ChangeSong(ObservableCollection<Song> listSong, int position, int add)
         {
             int index = listSong.IndexOf(currentSong);
+            //Nếu bài đầu hoặc cuối danh sách thì nhấn nút nó ko làm gì
             if (index == position)
             {
                 return;
@@ -215,6 +222,7 @@ namespace HungMp3
                 songControl.Infor = currentSong;
             }
         }
+        //Khi nhấn nút pre sẽ nhảy về bài trc
         private void songControl_PreviousClick(object sender, EventArgs e)
         {
             if (IsListVN)
@@ -224,6 +232,7 @@ namespace HungMp3
             else ChangeSong(ListUS, 0, -1);
         }
 
+        //Khi nhấn nút next sẽ nhảy về bài sau
         private void songControl_NextClick(object sender, EventArgs e)
         {
             if (IsListVN)

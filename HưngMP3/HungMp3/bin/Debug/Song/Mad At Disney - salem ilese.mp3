@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
+    <head>
+        <link rel="icon" type="image/png" href="https://stc-id.nixcdn.com/v11/images/favicon.ico" />
+        <meta name="viewport" content="width=668, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+        <meta http-equiv="Content-Language" content="vi" />
+        <meta http-equiv="X-UA-Compatible" content="requiresActiveX=true"/>
+        <title>Mad At Disney - salem ilese - NhacCuaTui</title>
+        <meta property="og:description" content="Mad At Disney - salem ilese | Nghe nhạc hay online mới nhất chất lượng cao" />
+        <meta content="mad at disney, salem ilese, pop, nhaccuatui, nghe nhac, tai nhac" name="keywords" />
+        <link rel="canonical" href="https://www.nhaccuatui.com/bai-hat/mad-at-disney-salem-ilese.r3IjpnmoQXR3.html" />
+        <link rel="alternate" media="handheld" href="http://m.nhaccuatui.com/bai-hat/mad-at-disney-salem-ilese.r3IjpnmoQXR3.html" />
+        <meta content="index, follow" name="robots" />
+        <meta content="Mad At Disney - salem ilese | Nghe nhạc hay online mới nhất chất lượng cao" name="description" />            
+        <link rel="stylesheet" type="text/css" media="screen, print, projection" href="https://stc-id.nixcdn.com/v11/css/loading.css"/>        
+        <link rel="stylesheet" type="text/css" media="screen, print, projection" href="https://stc-id.nixcdn.com/v11/css/nct.screen.v11.0.40.css"/>                
+        <!--[if IE ]><link rel="stylesheet" type="text/css" media="screen, print, projection" href="https://stc-id.nixcdn.com/v11/css/fixie.css"/><![endif]-->                
+        <script type="text/javascript">
+            document.domain = "nhaccuatui.com";
+            var NCTInfo = {"ROOT_URL": "https://www.nhaccuatui.com/", "STATIC_URL": "https://stc-id.nixcdn.com/v11/", "WIDGET_URL" : "http://widget.nhaccuatui.com/", "SSO_URL": "https://sso.nct.vn/", "INTERACTION_URL": "https://www.nhaccuatui.com/interaction/", "isLogged": "false", "userName": "", "userId": "0", "mineKey": "", "avatar": "https://stc-id.nixcdn.com/v11/images/avatar_default_2020.png", "upl": [], "upll": []};
+            var _gaq = _gaq || [];
+            
+            var timeLoad = "20201211";
+        </script>
+        <script type="text/javascript" src="https://stc-id.nixcdn.com/v11/js/nct.core.min.v1.2.js"></script>
+        <script type="text/javascript" src="https://stc-id.nixcdn.com/v11/js/pack/embed/1.0.3.embed.js"></script>   
+        
+        
+        
+        <style>
+            html, body {height: 100%;}
+        </style>
+    </head>
+    <body style="min-width: inherit; height: 100%;">
+        <script type="text/javascript" src="https://stc-id.nixcdn.com/v11/js/dev/nct.tracking.event.0.5.js"></script>
+<!--<script src="https://stc-id.nixcdn.com/v11/js/raven.min.3.25.2.js" crossorigin="anonymous"></script>-->
+<script type="text/javascript">var OPEN_SENTRY = false;
+    //Raven.config('https://849ab35c6c844a12b9e89e4bbba6f9da@sentry.nct.vn/3').install();
+</script>
+
+
+
+
+
+<style>
+    .playing_absolute {width: 668px; height: 312px;}
+    @media screen and (max-width: 350px){
+        .playing_absolute {width: 316px; height: 381px;}
+    }
+</style>
+<div class="playing_absolute">
+    
+    
+    <script type="text/javascript" src="https://stc-id.nixcdn.com/v11/js/lib/nct.player.audio.1.6.js"></script>
+                        <script type="text/javascript" src="https://stc-id.nixcdn.com/v11/html5/nct-player-mp3/ads/audio_ads_vast.js"></script>
+                        <script type="text/javascript" src="https://stc-id.nixcdn.com/v11/html5/nct-player-mp3/ads/audio_ads_180920.js"></script>
+                        <script type="text/javascript" src="https://stc-id.nixcdn.com/v11/html5/nct-player-video/utils/vast-client.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen, print, projection" href="https://stc-id.nixcdn.com/v11/html5/nct-player-mp3/css/style_mp3.0.4.css"/>
+    <script type="text/javascript" src="https://stc-id.nixcdn.com/v11/html5/nct-player-mp3/version/0.65.js"></script>
+    <div class="flash_playing" id="flashPlayer"></div>
+    <script type="text/javascript">
+    isEmbed = true;
+    if (putils.support.tagAudio()) {
+        var player = new NCTPlayer();
+        player.peConfig.autoPlay = true;
+        player.adsMp3.openAudioAds = true;
+        player.adsMp3.link = "https://apinas.nct.vn/v4/delivery?zl=S_Inner";
+        player.adsMp3.open = true;
+        player.peConfig.xmlURL = "https://www.nhaccuatui.com/embed_player/xml?html5=true&key1=8c29c6fb308a9a772f21858e4a26fbd9";
+        player.peConfig.defaultIndex = "0";
+        
+        player.load("flashPlayer");
+        NCTNowPlaying.type = "song";
+    } else {
+        var player = {};
+        player.open = false;
+        document.write('<object data="https://stc-id.nixcdn.com/v11/flash/playermp3.nct.11.0.3.swf" id="mediaFlashPlayer" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" name="mediaFlashPlayer" type="application/x-shockwave-flash" width="668" height="312" style="float:left;"><param name="movie" value="https://stc-id.nixcdn.com/v11/flash/playermp3.nct.11.0.3.swf" /><param name="quality" value="high" /><param name="scale" value="noscale" /><param name="wmode" value="transparent" /><param name="allowscriptaccess" value="always" /><param name="allowFullScreen" value="true" /><param name="allownetworking" value="all" /><param name="bgcolor" value="#000000" /><param name="flashvars" value="flashid=mediaFlashPlayer&amp;autostart=true&amp;ads=https://apinas.nct.vn/v4/delivery?zl=S_Inner&amp;defaultindex=0&amp;file=https://www.nhaccuatui.com/flash/xml?key1=8c29c6fb308a9a772f21858e4a26fbd9" /><embed id="mediaFlashPlayer" bgcolor="#000000" allownetworking="all" scale="noscale" quality="high" wmode="transparent" allowscriptaccess="always" allowfullscreen="true" width="668" height="312" src="https://stc-id.nixcdn.com/v11/flash/playermp3.nct.11.0.3.swf" flashvars="flashid=mediaFlashPlayer&amp;autostart=true&amp;ads=https://apinas.nct.vn/v4/delivery?zl=S_Inner&amp;defaultindex=0&amp;file=https://www.nhaccuatui.com/flash/xml?key1=8c29c6fb308a9a772f21858e4a26fbd9" /></object>');
+        NCTNowPlaying.intFlashPlayer("flashPlayer", "song", "8c29c6fb308a9a772f21858e4a26fbd9");
+        var dataSong = {key: 'r3IjpnmoQXR3', type: 'song'};
+    }
+    </script>
+    
+    
+</div>
+<script type="text/javascript">       
+    $(document).ready(function() {
+        NCTNowPlaying.initNowPlaying();
+        NCT_widget_exec();
+        NCTWidget.hitCounter('6354910', '1609226090645', '6b698795cd382451621b2af41d449052', "song");     
+        if ($("#mp3flashPlayer").size() > 0) {
+            document.getElementById("mp3flashPlayer").play();
+        }
+    });
+</script>
+        <script>
+        var uuidRun = "";                                    
+        if (getCookie("nct_uuid") == "" || getCookie("nct_uuid") == null || getCookie("nct_uuid") == "null") {
+            var name = $.browser.name;
+            var version = $.browser.version;
+            var platformName = $.browser.platform;
+            var platformVersion = window.navigator.platform;
+            var data = {
+                browserName: name,
+                browserVersion: version,
+                platformName: platformName,
+                platformVersion: platformVersion,
+                t: (new Date()).getTime()
+            };
+            $.getJSON(NCTLoginJWT.get_uuid, data, function (result) {
+                if (result.data != "") {
+                    uuidRun = result.data;
+                    setCookie("nct_uuid", result.data, 30);
+                }
+            });
+        }                           
+        </script>
+        
+        <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-273986-1']);
+        _gaq.push(['_trackPageview']);
+        _gaq.push(['_setUserId', uuidRun]);
+        //ga('set', 'userId', USER_ID);
+        //_gaq.push(['nct._setAccount', 'UA-273986-19']);
+        //_gaq.push(['nct._setDomainName', 'nhaccuatui.com']);
+        //_gaq.push(['nct._trackPageview']);
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();</script>
+        <script type="text/javascript" src="https://stc-nas.nixcdn.com/v4/js/nqc.min.v-3.1.6.js"></script>
+    </body>
+</html>
+

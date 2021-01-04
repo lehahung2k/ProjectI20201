@@ -34,7 +34,7 @@
                                 <GradientStop Color="orange"/>
                             </LinearGradientBrush>
                         </ToggleButton.Background>
-                        BXH Việt Nam
+                        <Bold>BXH Việt Nam</Bold>
                     </ToggleButton>
                 </Grid>
                 <Grid Grid.Column="1" Background="WhiteSmoke">
@@ -46,7 +46,7 @@
                                 <GradientStop Color="white"/>
                             </LinearGradientBrush>
                         </ToggleButton.Background>
-                        BXH Âu Mỹ 
+                        <Bold>BXH Âu Mỹ</Bold>
                     </ToggleButton>
                 </Grid>
                 <Grid Grid.Column="2" Background="Azure">
@@ -58,7 +58,7 @@
                                 <GradientStop Color="Yellow"/>
                             </LinearGradientBrush>
                         </ToggleButton.Background>
-                        Nhạc yêu thích
+                        <Bold>Nhạc yêu thích</Bold>
                     </ToggleButton>
                 </Grid>
                 <Grid Grid.Column="3" Background="Pink">
@@ -70,7 +70,7 @@
                                 <GradientStop Color="pink"/>
                             </LinearGradientBrush>
                         </ToggleButton.Background>
-                        Nhạc nghe nhiều nhất
+                        <Bold>Nhạc nghe nhiều nhất</Bold>
                     </ToggleButton>
                 </Grid>
             </Grid>
@@ -83,22 +83,31 @@
                                 <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="30"></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
                                         <ColumnDefinition></ColumnDefinition>
                                         <ColumnDefinition Width="50"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
 
                                     <Grid Background="AliceBlue">
-                                        <TextBlock HorizontalAlignment="Center" Text="{Binding STT}"></TextBlock>
+                                        <TextBlock FontWeight="Bold" HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center" Text="{Binding STT}"></TextBlock>
                                     </Grid>
 
                                     <Grid Grid.Column="1">
-                                        <Grid Background="Beige">
-                                            <TextBlock HorizontalAlignment="Left" Text="{Binding SongName}"></TextBlock>
-                                        </Grid>
+                                        <Image Source="{Binding ImageUrl}"></Image>
                                     </Grid>
 
                                     <Grid Grid.Column="2">
-                                        <Button Click="Button_Click">Like</Button>
+                                        <Grid Background="Beige">
+                                            <TextBlock FontWeight="Heavy" HorizontalAlignment="Center"
+                                                       VerticalAlignment="Center" Text="{Binding SongName}"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+
+                                    <Grid Grid.Column="3">
+                                        <Button Click="Button_Click" Background="White">
+                                            <Image Width="25" Height="25" Source="https://cdn.pixabay.com/photo/2020/09/30/07/48/heart-5614865_960_720.png"></Image>
+                                        </Button>
                                     </Grid>
                                 
                                 </Grid>

@@ -137,7 +137,7 @@ namespace HungMp3
                 {
                     audio.Play();
                     timer.Start();
-                    btnPlay.Content = "Pause";
+                    btnPlay.Content = "Pause" ;
                 }
                 else 
                 { 
@@ -178,5 +178,10 @@ namespace HungMp3
             if (nextClick != null) nextClick(this, new EventArgs());
         }
         //Volume
+        private void ChangeMediaVolume(object sender, RoutedPropertyChangedEventArgs<double> args)
+        {
+            audio.Volume = (double)volumeSlider.Value;
+        }
+
     }
 }

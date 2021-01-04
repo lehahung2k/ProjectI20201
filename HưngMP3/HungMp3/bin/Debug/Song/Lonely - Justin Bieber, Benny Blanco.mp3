@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
+    <head>
+        <link rel="icon" type="image/png" href="https://stc-id.nixcdn.com/v11/images/favicon.ico" />
+        <meta name="viewport" content="width=668, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+        <meta http-equiv="Content-Language" content="vi" />
+        <meta http-equiv="X-UA-Compatible" content="requiresActiveX=true"/>
+        <title>Lonely - Justin Bieber, Benny Blanco - NhacCuaTui</title>
+        <meta property="og:description" content="Lonely - Justin Bieber, Benny Blanco | Nghe nhạc hay online mới nhất chất lượng cao" />
+        <meta content="lonely, justin bieber, benny blanco, pop, nhaccuatui, nghe nhac, tai nhac" name="keywords" />
+        <link rel="canonical" href="https://www.nhaccuatui.com/bai-hat/lonely-justin-bieber-ft-benny-blanco.bvM7HrPCgGDO.html" />
+        <link rel="alternate" media="handheld" href="http://m.nhaccuatui.com/bai-hat/lonely-justin-bieber-ft-benny-blanco.bvM7HrPCgGDO.html" />
+        <meta content="index, follow" name="robots" />
+        <meta content="Lonely - Justin Bieber, Benny Blanco | Nghe nhạc hay online mới nhất chất lượng cao" name="description" />            
+        <link rel="stylesheet" type="text/css" media="screen, print, projection" href="https://stc-id.nixcdn.com/v11/css/loading.css"/>        
+        <link rel="stylesheet" type="text/css" media="screen, print, projection" href="https://stc-id.nixcdn.com/v11/css/nct.screen.v11.0.40.css"/>                
+        <!--[if IE ]><link rel="stylesheet" type="text/css" media="screen, print, projection" href="https://stc-id.nixcdn.com/v11/css/fixie.css"/><![endif]-->                
+        <script type="text/javascript">
+            document.domain = "nhaccuatui.com";
+            var NCTInfo = {"ROOT_URL": "https://www.nhaccuatui.com/", "STATIC_URL": "https://stc-id.nixcdn.com/v11/", "WIDGET_URL" : "http://widget.nhaccuatui.com/", "SSO_URL": "https://sso.nct.vn/", "INTERACTION_URL": "https://www.nhaccuatui.com/interaction/", "isLogged": "false", "userName": "", "userId": "0", "mineKey": "", "avatar": "https://stc-id.nixcdn.com/v11/images/avatar_default_2020.png", "upl": [], "upll": []};
+            var _gaq = _gaq || [];
+            
+            var timeLoad = "20201211";
+        </script>
+        <script type="text/javascript" src="https://stc-id.nixcdn.com/v11/js/nct.core.min.v1.2.js"></script>
+        <script type="text/javascript" src="https://stc-id.nixcdn.com/v11/js/pack/embed/1.0.3.embed.js"></script>   
+        
+        
+        
+        <style>
+            html, body {height: 100%;}
+        </style>
+    </head>
+    <body style="min-width: inherit; height: 100%;">
+        <script type="text/javascript" src="https://stc-id.nixcdn.com/v11/js/dev/nct.tracking.event.0.5.js"></script>
+<!--<script src="https://stc-id.nixcdn.com/v11/js/raven.min.3.25.2.js" crossorigin="anonymous"></script>-->
+<script type="text/javascript">var OPEN_SENTRY = false;
+    //Raven.config('https://849ab35c6c844a12b9e89e4bbba6f9da@sentry.nct.vn/3').install();
+</script>
+
+
+
+<div class="flash_playing" style="width: 100% !important;height: 100%;position: absolute;background: #000;z-index: 9999;">
+    <div class="box-universal-alert songplaylist">
+        <div class="txt-alert-universal" style="width: 100%;">Sorry, this content is currently not available in your country due to its copyright restriction.<br>
+            You can choose other content. Thanks for your understanding.
+        </div>
+        <div class="header-fill" style="width: 100%; background-size: cover;"></div>                
+    </div>                            
+</div>                        
+
+
+<style>
+    .playing_absolute {width: 668px; height: 312px;}
+    @media screen and (max-width: 350px){
+        .playing_absolute {width: 316px; height: 381px;}
+    }
+</style>
+<div class="playing_absolute">
+    
+    
+    
+</div>
+<script type="text/javascript">       
+    $(document).ready(function() {
+        NCTNowPlaying.initNowPlaying();
+        NCT_widget_exec();
+        NCTWidget.hitCounter('6735761', '1609786772922', '1c4c2f586931c3d492bd61429a273891', "song");     
+        if ($("#mp3flashPlayer").size() > 0) {
+            document.getElementById("mp3flashPlayer").play();
+        }
+    });
+</script>
+        <script>
+        var uuidRun = "";                                    
+        if (getCookie("nct_uuid") == "" || getCookie("nct_uuid") == null || getCookie("nct_uuid") == "null") {
+            var name = $.browser.name;
+            var version = $.browser.version;
+            var platformName = $.browser.platform;
+            var platformVersion = window.navigator.platform;
+            var data = {
+                browserName: name,
+                browserVersion: version,
+                platformName: platformName,
+                platformVersion: platformVersion,
+                t: (new Date()).getTime()
+            };
+            $.getJSON(NCTLoginJWT.get_uuid, data, function (result) {
+                if (result.data != "") {
+                    uuidRun = result.data;
+                    setCookie("nct_uuid", result.data, 30);
+                }
+            });
+        }                           
+        </script>
+        
+        <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-273986-1']);
+        _gaq.push(['_trackPageview']);
+        _gaq.push(['_setUserId', uuidRun]);
+        //ga('set', 'userId', USER_ID);
+        //_gaq.push(['nct._setAccount', 'UA-273986-19']);
+        //_gaq.push(['nct._setDomainName', 'nhaccuatui.com']);
+        //_gaq.push(['nct._trackPageview']);
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();</script>
+        <script type="text/javascript" src="https://stc-nas.nixcdn.com/v4/js/nqc.min.v-3.1.6.js"></script>
+    </body>
+</html>
+
