@@ -137,7 +137,8 @@ namespace HungMp3
                 {
                     audio.Play();
                     timer.Start();
-                    btnPlay.Content = "Pause" ;
+                    //btnPlay.Content = "Pause" ;
+                    //btnPlay.Content = new Uri("D:\\20201\\Project I\\ProjectI20201\\HưngMP3\\HungMp3\\Resources\\play.png");
                 }
                 else 
                 { 

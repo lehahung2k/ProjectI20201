@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HungMp3"
+             xmlns:controls="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls.WebView"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1024">
     <Grid Background="White">
@@ -28,7 +29,8 @@
                     </LinearGradientBrush>
                 </Rectangle.Fill>
             </Rectangle>
-            <Button Click="Button_Click" Background="LightGoldenrodYellow" BorderBrush="Snow" Margin="0,0,954,0.4">
+            <Button Click="Button_Click" Background="LightGoldenrodYellow" BorderBrush="Snow" Width="60" 
+                     HorizontalAlignment="Left">
                 <Image Source="https://cdn.pixabay.com/photo/2016/09/23/14/42/back-1689836_1280.png"></Image>
             </Button>
         </Grid>
@@ -92,22 +94,22 @@
                     </Grid.ColumnDefinitions>
                     <!--Các nút điều khiển-->
                     <Button Grid.Column="2" x:Name="btnPlay" Click="Button_Click_1" 
-                            Background="White" BorderBrush="LightGoldenrodYellow">
+                            Background="White" BorderBrush="White" Margin="64.4,0,64.4,0.2">
                         <Image Source="D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\Resources\play.png"></Image>
                     </Button>
                     <Button Grid.Column="1" Click="Button_Click_2"
-                            Background="White" BorderThickness="0">
+                            Background="White" BorderThickness="0" Margin="145.2,0,9.6,0.2">
                         <Image Source="D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\Resources\pre.png"></Image>
                     </Button>
                     <Button Grid.Column="3" Click="Button_Click_3"
-                             Background="White" BorderThickness="0">
+                             Background="White" BorderThickness="0" Margin="9.6,0,145.2,0.2">
                         <Image Source="D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\Resources\next.png"></Image>
                     </Button>
                     <!--Volume-->
                     <Image Grid.Column="3" Source="D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\Resources\audio.png" Grid.ColumnSpan="2" Margin="189.6,0,141,0.2"></Image>
                     <Slider Grid.Column="4" Name="volumeSlider"
                             VerticalAlignment="Center" ValueChanged="ChangeMediaVolume" 
-                     Minimum="0" Maximum="10" Value="5" Margin="40.8,8,20,0.2" Height="27"/>
+                     Minimum="0" Maximum="1" Value="0.5" Margin="40.8,8,20,0.2" Height="27"/>
 
                 </Grid>
             </Grid>

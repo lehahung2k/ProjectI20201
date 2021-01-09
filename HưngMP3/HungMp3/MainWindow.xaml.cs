@@ -147,13 +147,15 @@ namespace HungMp3
 
                 }
                 //Lấy url để download
-                string downloadUrl = Regex.Match(htmlSong, @"<iframe\ssrc=""https://www.n(.*?)""", RegexOptions.Singleline).Value;
-                downloadUrl = downloadUrl.Replace("<iframe src=\"", "").Replace("\"", "");
+                string dlUrl = Regex.Match(htmlSong.ToString(), @"<iframe\ssrc=""https://www.n(.*?)""", RegexOptions.Singleline).Value;
+                string downloadUrl = dlUrl.Replace("<iframe src=\"", "").Replace("\"", "");
                
                 //Lấy đường dẫn trên máy:
                 string savePath = AppDomain.CurrentDomain.BaseDirectory + "Song\\" + songName + ".mp3";
 
-                listSong.Add(new Song() {SongName = songName, SongUrl = urlSong, STT = i + 1, Lyrics = tempLyric, DownloadUrl = downloadUrl, SavePath = savePath, ImageUrl = imageUrl });
+                listSong.Add(new Song() {SongName = songName, SongUrl = urlSong, 
+                                        STT = i + 1, Lyrics = tempLyric, DownloadUrl = downloadUrl, 
+                                        SavePath = savePath, ImageUrl = imageUrl });
             }
         }
 

@@ -40,3 +40,5 @@ D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\bin\Debug\xNet.dll
 D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\bin\Debug\xNet.pdb
 D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\bin\Debug\xNet.xml
 D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\obj\Debug\HungMp3.csproj.CopyComplete
+D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\bin\Debug\Microsoft.Toolkit.Wpf.UI.Controls.WebView.dll
+D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\bin\Debug\Microsoft.Toolkit.Wpf.UI.Controls.WebView.pdb
