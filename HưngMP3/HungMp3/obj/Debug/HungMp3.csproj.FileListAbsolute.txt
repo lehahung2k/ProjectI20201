@@ -42,3 +42,54 @@ D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\bin\Debug\xNet.xml
 D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\obj\Debug\HungMp3.csproj.CopyComplete
 D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\bin\Debug\Microsoft.Toolkit.Wpf.UI.Controls.WebView.dll
 D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\bin\Debug\Microsoft.Toolkit.Wpf.UI.Controls.WebView.pdb
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\bin\Debug\HungMp3.exe.config
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\bin\Debug\HungMp3.exe
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\bin\Debug\HungMp3.pdb
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\bin\Debug\Microsoft.Toolkit.Wpf.UI.Controls.WebView.dll
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\bin\Debug\Microsoft.Toolkit.Wpf.UI.Controls.WebView.pdb
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\bin\Debug\xNet.pdb
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\bin\Debug\xNet.xml
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\obj\Debug\HungMp3.csprojAssemblyReference.cache
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\obj\Debug\InterfaceApp.g.cs
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\obj\Debug\MainWindow.g.cs
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\obj\Debug\App.g.cs
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\obj\Debug\HungMp3_MarkupCompile.cache
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\obj\Debug\HungMp3_MarkupCompile.lref
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\obj\Debug\InterfaceApp.baml
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\obj\Debug\MainWindow.baml
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\obj\Debug\TextStyle.baml
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\obj\Debug\HungMp3.g.resources
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\obj\Debug\HungMp3.Properties.Resources.resources
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\obj\Debug\HungMp3.csproj.GenerateResource.cache
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\obj\Debug\HungMp3.csproj.CoreCompileInputs.cache
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\obj\Debug\HungMp3.csproj.CopyComplete
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\obj\Debug\HungMp3.exe
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\obj\Debug\HungMp3.pdb
+C:\Users\WangA\Desktop\HưngMP3\HungMp3\obj\Debug\App.baml
+D:\20201\Project I\mp3\HưngMP3\HungMp3\bin\Debug\HungMp3.exe.config
+D:\20201\Project I\mp3\HưngMP3\HungMp3\bin\Debug\HungMp3.exe
+D:\20201\Project I\mp3\HưngMP3\HungMp3\bin\Debug\HungMp3.pdb
+D:\20201\Project I\mp3\HưngMP3\HungMp3\bin\Debug\Microsoft.Toolkit.Wpf.UI.Controls.WebView.dll
+D:\20201\Project I\mp3\HưngMP3\HungMp3\bin\Debug\Microsoft.Toolkit.Wpf.UI.Controls.WebView.pdb
+D:\20201\Project I\mp3\HưngMP3\HungMp3\bin\Debug\xNet.dll
+D:\20201\Project I\mp3\HưngMP3\HungMp3\bin\Debug\xNet.pdb
+D:\20201\Project I\mp3\HưngMP3\HungMp3\bin\Debug\xNet.xml
+D:\20201\Project I\mp3\HưngMP3\HungMp3\obj\Debug\HungMp3.csprojAssemblyReference.cache
+D:\20201\Project I\mp3\HưngMP3\HungMp3\obj\Debug\InterfaceApp.g.cs
+D:\20201\Project I\mp3\HưngMP3\HungMp3\obj\Debug\MainWindow.g.cs
+D:\20201\Project I\mp3\HưngMP3\HungMp3\obj\Debug\App.g.cs
+D:\20201\Project I\mp3\HưngMP3\HungMp3\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\20201\Project I\mp3\HưngMP3\HungMp3\obj\Debug\HungMp3_MarkupCompile.cache
+D:\20201\Project I\mp3\HưngMP3\HungMp3\obj\Debug\HungMp3_MarkupCompile.lref
+D:\20201\Project I\mp3\HưngMP3\HungMp3\obj\Debug\App.baml
+D:\20201\Project I\mp3\HưngMP3\HungMp3\obj\Debug\InterfaceApp.baml
+D:\20201\Project I\mp3\HưngMP3\HungMp3\obj\Debug\MainWindow.baml
+D:\20201\Project I\mp3\HưngMP3\HungMp3\obj\Debug\TextStyle.baml
+D:\20201\Project I\mp3\HưngMP3\HungMp3\obj\Debug\HungMp3.g.resources
+D:\20201\Project I\mp3\HưngMP3\HungMp3\obj\Debug\HungMp3.Properties.Resources.resources
+D:\20201\Project I\mp3\HưngMP3\HungMp3\obj\Debug\HungMp3.csproj.GenerateResource.cache
+D:\20201\Project I\mp3\HưngMP3\HungMp3\obj\Debug\HungMp3.csproj.CoreCompileInputs.cache
+D:\20201\Project I\mp3\HưngMP3\HungMp3\obj\Debug\HungMp3.csproj.CopyComplete
+D:\20201\Project I\mp3\HưngMP3\HungMp3\obj\Debug\HungMp3.exe
+D:\20201\Project I\mp3\HưngMP3\HungMp3\obj\Debug\HungMp3.pdb

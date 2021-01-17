@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xDOkb6BQI/CJdHYNGg0K6LRNldsDcILl476KRTu0h0ZRADSvI5VBfkfXxgbgC99CEVRzL4b/M2kf/klEVe8GSw==",
+  "dgSpecHash": "Gbm2bnrNL8m67e3x9EmdF+3TC5SsSm6tnfiuJcADszkfE1TMiLLN6ymaerBaJAOq3qrOedCHgHwjcLdHs8yB8A==",
   "success": true,
-  "projectFilePath": "D:\\20201\\Project I\\ProjectI20201\\HưngMP3\\HungMp3\\HungMp3.csproj",
+  "projectFilePath": "D:\\20201\\Project I\\mp3\\HưngMP3\\HungMp3\\HungMp3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hung2\\.nuget\\packages\\microsoft.toolkit.wpf.ui.controls.webview\\6.1.2\\microsoft.toolkit.wpf.ui.controls.webview.6.1.2.nupkg.sha512",
     "C:\\Users\\hung2\\.nuget\\packages\\microsoft.windows.sdk.contracts\\10.0.18362.2005\\microsoft.windows.sdk.contracts.10.0.18362.2005.nupkg.sha512",

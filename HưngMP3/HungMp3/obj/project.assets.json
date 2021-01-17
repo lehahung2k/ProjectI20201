@@ -952,11 +952,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\20201\\Project I\\ProjectI20201\\HưngMP3\\HungMp3\\HungMp3.csproj",
+      "projectUniqueName": "D:\\20201\\Project I\\mp3\\HưngMP3\\HungMp3\\HungMp3.csproj",
       "projectName": "HungMp3",
-      "projectPath": "D:\\20201\\Project I\\ProjectI20201\\HưngMP3\\HungMp3\\HungMp3.csproj",
+      "projectPath": "D:\\20201\\Project I\\mp3\\HưngMP3\\HungMp3\\HungMp3.csproj",
       "packagesPath": "C:\\Users\\hung2\\.nuget\\packages\\",
-      "outputPath": "D:\\20201\\Project I\\ProjectI20201\\HưngMP3\\HungMp3\\obj\\",
+      "outputPath": "D:\\20201\\Project I\\mp3\\HưngMP3\\HungMp3\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [

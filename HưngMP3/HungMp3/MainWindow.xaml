@@ -7,12 +7,17 @@
         xmlns:uc="clr-namespace:HungMp3"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="HungMP3" Height="800px" Width="1024px">
+        Title="HungMP3" Height="800px" Width="1024px" Margin="0">
     <Window.Resources>
         <ResourceDictionary Source="TextStyle.xaml"></ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <Grid x:Name="playList">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="58*"/>
+            <ColumnDefinition Width="259*"/>
+            <ColumnDefinition Width="701*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="playList" Grid.ColumnSpan="3" Margin="0,0,-0.4,0.4">
             <Grid.RowDefinitions>
                 <RowDefinition Height="200px"></RowDefinition>
                 <RowDefinition></RowDefinition>
@@ -26,7 +31,7 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0" Background="MistyRose">
-                    <Image Source="D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\Resources\nhacvn.jpg" Stretch="UniformToFill"/>
+                    <Image Source="{Binding imageVN}" Stretch="UniformToFill"/>
                     <ToggleButton Height="30" Margin="0,0,0.4,170" IsChecked="{Binding IsListVN}">
                         <ToggleButton.Background>
                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -38,8 +43,8 @@
                     </ToggleButton>
                 </Grid>
                 <Grid Grid.Column="1" Background="WhiteSmoke">
-                    <Image Source="D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\Resources\nhacusuk.jpg" Stretch="Fill"></Image>
-                    <ToggleButton Height="30" Margin="0,0,0.4,170" IsChecked="{Binding IsListUS}">
+                    <Image Source="{Binding imageUS}" Stretch="Fill"></Image>
+                    <ToggleButton Height="30" Margin="0,0,0.4,170" IsChecked="{Binding IsListUS}" IsThreeState="True">
                         <ToggleButton.Background>
                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                 <GradientStop Color="red" Offset="1"/>
@@ -50,7 +55,7 @@
                     </ToggleButton>
                 </Grid>
                 <Grid Grid.Column="2" Background="Azure">
-                    <Image Source="D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\Resources\nhacyeuthich.jpg"></Image>
+                    <Image Source="{Binding imageYeuThich}"></Image>
                     <ToggleButton Height="30" Margin="0,0,0.4,170" IsChecked="{Binding IsListYeuThich}">
                         <ToggleButton.Background>
                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -62,7 +67,7 @@
                     </ToggleButton>
                 </Grid>
                 <Grid Grid.Column="3" Background="Pink">
-                    <Image Source="D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\Resources\Love.png" Stretch="UniformToFill"></Image>
+                    <Image Source="{Binding imageNgheNhieu}" Stretch="UniformToFill"></Image>
                     <ToggleButton Height="30" Margin="0,0,0.4,170" IsChecked="{Binding IsListNgheNhieu}">
                         <ToggleButton.Background>
                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -109,7 +114,7 @@
                                             <Image Width="25" Height="25" Source="https://cdn.pixabay.com/photo/2020/09/30/07/48/heart-5614865_960_720.png"></Image>
                                         </Button>
                                     </Grid>
-                                
+
                                 </Grid>
                             </Border>
                         </DataTemplate>
@@ -118,6 +123,6 @@
             </Grid>
         </Grid>
         <uc:InterfaceApp PreviousClick="songControl_PreviousClick" NextClick="songControl_NextClick"
-                         x:Name="songControl" Visibility="Hidden"></uc:InterfaceApp>
+                         x:Name="songControl" Visibility="Hidden" Grid.ColumnSpan="3" Margin="0,0,-0.4,0.4"></uc:InterfaceApp>
     </Grid>
 </Window>

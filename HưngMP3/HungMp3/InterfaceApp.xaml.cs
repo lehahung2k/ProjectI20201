@@ -24,6 +24,33 @@ namespace HungMp3
     /// </summary>
     public partial class InterfaceApp : UserControl, INotifyPropertyChanged
     {
+        //Ảnh
+        public string imageAudio { get; } = @"~\..\Resources\audio.png";
+        public string imagePre { get; } = @"~\..\Resources\pre.png";
+        public string imageNext { get; } = @"~\..\Resources\next.png";
+        public string imagePlay
+        {
+            get
+            {
+                if (IsPlaying) return @"~\..\Resources\pause.png";
+                else return @"~\..\Resources\play.png";
+            }
+        }
+
+        private bool shuffle;
+        public bool Shuffle
+        {
+            get { return shuffle; }
+            set
+            {
+                shuffle = value;
+                ShuffleToggled?.Invoke(shuffle);
+            }
+        }
+
+        public delegate void CheckBoxToggled(bool isChecked);
+        public event CheckBoxToggled ShuffleToggled;
+
         private Song infor;
         public Song Infor 
         { 
@@ -44,6 +71,8 @@ namespace HungMp3
         public InterfaceApp()
         {
             InitializeComponent();
+            cbxShuffle.DataContext = this;
+            gridControl.DataContext = this;
             this.DataContext = Infor;
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 1);
@@ -94,10 +123,11 @@ namespace HungMp3
 
         private void audio_MediaOpened(object sender, RoutedEventArgs e)
         {
+            audio.MediaEnded += Audio_MediaEnded;
             IsPlaying = true;
             Infor.Duration = audio.NaturalDuration.TimeSpan.TotalSeconds;
             //Hiển thị thời gian bài hát: phút:giây
-            timeEnd.Text = new TimeSpan(0, (int)Infor.Duration/60, (int)Infor.Duration%60).ToString(@"mm\:ss");
+            timeEnd.Text = new TimeSpan(0, (int)Infor.Duration / 60, (int)Infor.Duration % 60).ToString(@"mm\:ss");
             audioDuration.Maximum = Infor.Duration;
             Infor.Position = 0;
         }
@@ -137,17 +167,28 @@ namespace HungMp3
                 {
                     audio.Play();
                     timer.Start();
-                    //btnPlay.Content = "Pause" ;
                     //btnPlay.Content = new Uri("D:\\20201\\Project I\\ProjectI20201\\HưngMP3\\HungMp3\\Resources\\play.png");
                 }
                 else 
                 { 
                     audio.Pause();
                     timer.Stop();
-                    btnPlay.Content = "Play";
                 }
             }
         }
+
+        private void Audio_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            IsPlaying = false;
+            if (cbxLoop.IsChecked == true)
+            {
+                audio.Position = new TimeSpan(0);
+                infor.Position = 0;
+                IsPlaying = true;
+            }
+            else nextClick?.Invoke(this, new EventArgs());
+        }
+
         private bool isPlaying;
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {

@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:HungMp3"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
     </Application.Resources>
+    <Application.MainWindow>
+        <local:MainWindow/>
+    </Application.MainWindow>
 </Application>

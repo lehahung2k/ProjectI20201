@@ -26,6 +26,12 @@ namespace HungMp3
     /// </summary>
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
+        //Danh sách ảnh
+        public string imageVN { get; } = @"~\..\Resources\nhacvn.jpg";
+        public string imageUS { get; } = @"~\..\Resources\nhacusuk.jpg";
+        public string imageYeuThich { get; } = @"~\..\Resources\nhacyeuthich.jpg";
+        public string imageNgheNhieu { get; } = @"~\..\Resources\Love.png";
+
         //Kiểm tra danh sách
         private bool isListVN;
         private bool isListUS;
@@ -38,7 +44,9 @@ namespace HungMp3
         public bool IsListVN { 
             get => isListVN; 
             set { 
-                isListVN = value; listMenu.ItemsSource = ListVN; isListUS = false; isListYeuThich = false; isListNgheNhieu = false;
+                isListVN = value; isListUS = false; isListYeuThich = false; isListNgheNhieu = false;
+                curList = ListVN;
+                listMenu.ItemsSource = curList;
                 OnPropertyChanged("IsListVN");   //Xác định sự kiện để cập nhật trên màn hình
                 OnPropertyChanged("IsListUS");
                 OnPropertyChanged("IsListYeuThich");
@@ -49,6 +57,8 @@ namespace HungMp3
             get => isListYeuThich; 
             set { 
                 isListYeuThich = value; isListVN = false; isListUS = false; isListNgheNhieu = false;
+                curList = ListYeuThich;
+                listMenu.ItemsSource = curList;
                 OnPropertyChanged("IsListVN");
                 OnPropertyChanged("IsListUS");
                 OnPropertyChanged("IsListYeuThich");
@@ -59,6 +69,8 @@ namespace HungMp3
             get => isListNgheNhieu; 
             set { 
                 isListNgheNhieu = value; isListVN = false; isListUS = false; isListYeuThich = false;
+                curList = ListNgheNhieu;
+                listMenu.ItemsSource = curList;
                 OnPropertyChanged("IsListVN");
                 OnPropertyChanged("IsListUS");
                 OnPropertyChanged("IsListYeuThich");
@@ -68,7 +80,9 @@ namespace HungMp3
         public bool IsListUS { 
             get => isListUS; 
             set { 
-                isListUS = value; listMenu.ItemsSource = ListUS; isListVN = false; isListYeuThich = false; isListNgheNhieu = false;
+                isListUS = value; isListVN = false; isListYeuThich = false; isListNgheNhieu = false;
+                curList = ListUS;
+                listMenu.ItemsSource = curList;
                 OnPropertyChanged("IsListVN");
                 OnPropertyChanged("IsListUS");
                 OnPropertyChanged("IsListYeuThich");
@@ -79,14 +93,16 @@ namespace HungMp3
         private ObservableCollection<Song> listVN;
         private ObservableCollection<Song> listUS;
         private ObservableCollection<Song> listYeuThich;
-        private List<Song> listNgheNhieu;
+        private ObservableCollection<Song> listNgheNhieu;
+        private List<Song> listShuffle = new List<Song>(); //List các bài đã play khi bật chế độ shuffle --> tránh phát lại các bài có trong list này
+        private ObservableCollection<Song> curList; //list hiện tại đang chọn
 
         private Song currentSong;
 
         public ObservableCollection<Song> ListVN { get => listVN; set => listVN = value; }
         public ObservableCollection<Song> ListUS { get => listUS; set => listUS = value; }
         public ObservableCollection<Song> ListYeuThich { get => listYeuThich; set => listYeuThich = value; }
-        public List<Song> ListNgheNhieu { get => listNgheNhieu; set => listNgheNhieu = value; }
+        public ObservableCollection<Song> ListNgheNhieu { get => listNgheNhieu; set => listNgheNhieu = value; }
 
         //crawl data:
         void CrawlData()
@@ -98,7 +114,8 @@ namespace HungMp3
             var listBXH = Regex.Matches(htmlData, htmlPattern, RegexOptions.Singleline);
 
             string bxhVN = listBXH[0].ToString();
-            AddSongToList(ListVN, bxhVN);
+
+            AddSongsToList(ListVN, bxhVN);
 
             //US=UK:
             string htmlData0 = http.Get(@"https://www.nhaccuatui.com/bai-hat/top-20.au-my.html").ToString();
@@ -106,11 +123,11 @@ namespace HungMp3
             var listBXH1 = Regex.Matches(htmlData0, htmlPattern0, RegexOptions.Singleline);
 
             string bxhUS = listBXH1[0].ToString();
-            AddSongToList(ListUS, bxhUS);
+            AddSongsToList(ListUS, bxhUS);
         }
 
         //thêm bài hát vào danh sách
-        void AddSongToList(ObservableCollection<Song> listSong, string html)
+        void AddSongsToList(ObservableCollection<Song> listSong, string html)
         {
             var listSongHtml = Regex.Matches(html, @"<li>(.*?)</li>", RegexOptions.Singleline);
             for (int i = 0; i < listSongHtml.Count; i++)
@@ -143,8 +160,6 @@ namespace HungMp3
                                     .ToString()
                                     .Replace("<p id=\"divLyric\" class=\"pd_lyric trans\" style=\"height:auto;max-height:255px;overflow:hidden;\">", "");
                     tempLyric = tempLyric.Replace("<br />", "").Replace("</p>", "");
-                    
-
                 }
                 //Lấy url để download
                 string dlUrl = Regex.Match(htmlSong.ToString(), @"<iframe\ssrc=""https://www.n(.*?)""", RegexOptions.Singleline).Value;
@@ -180,12 +195,24 @@ namespace HungMp3
         //Thêm 1 bài hát vào danh sách yêu thích
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            ObservableCollection<Song> curList = null;
+            if (IsListVN) curList = ListVN;
+            else if (IsListUS) curList = ListUS;
+
+            if (curList == null) return;
+
+            Song song = (((sender as Button).Parent as Grid).Parent as Grid).DataContext as Song;
+            if (!ListYeuThich.Contains(song)) ListYeuThich.Add(song);
+            else MessageBox.Show(Globals.textListContained);
         }
 
         //Binding từ giao diện sang code
         protected virtual void OnPropertyChanged(string newName)
         {
+            //Clear danh sách đã play
+            listShuffle.Clear();
+
+            //Tạo event mà không thấy dùng ở đâu cả?
             if (PropertyChanged != null)
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(newName));
@@ -195,13 +222,14 @@ namespace HungMp3
         public MainWindow()
         {
             InitializeComponent();
-            songControl.BackToList += SongControl_BackToList;
+            songControl.BackToList += SongControl_BackToList; //Hàm quay về playlist
+            songControl.ShuffleToggled += songControl_ShuffleToggled; //Thêm hàm xử lý cho event shuffle toggled
             this.DataContext = this;
 
             ListVN = new ObservableCollection<Song>();
             ListUS = new ObservableCollection<Song>();
             ListYeuThich = new ObservableCollection<Song>();
-            ListNgheNhieu = new List<Song>();
+            ListNgheNhieu = new ObservableCollection<Song>();
 
             CrawlData();
 
@@ -213,35 +241,50 @@ namespace HungMp3
         void ChangeSong(ObservableCollection<Song> listSong, int position, int add)
         {
             int index = listSong.IndexOf(currentSong);
-            //Nếu bài đầu hoặc cuối danh sách thì nhấn nút nó ko làm gì
-            if (index == position)
+            
+            if (songControl.Shuffle)
             {
-                return;
+                //Nếu là đang shuffle
+                Random gen = new Random();
+                if (listShuffle.Count >= listSong.Count)
+                    listShuffle.Clear();
+                do
+                {
+                    currentSong = listSong[gen.Next(0, listSong.Count)];
+                } while (listShuffle.Contains(currentSong));
+                listShuffle.Add(currentSong);
+                songControl.Infor = currentSong;
             }
             else
             {
-                currentSong = listSong[index + add];
+                //Nếu bài đầu hoặc cuối danh sách thì nhấn nút nó ko làm gì
+                //=> sửa thành thì nó lặp lại danh sách
+                if (index == 0 && add == -1) currentSong = listSong.Last();
+                else if (index == listSong.Count - 1 && add == 1) currentSong = listSong.First();
+                else currentSong = listSong[index + add];
                 songControl.Infor = currentSong;
             }
         }
         //Khi nhấn nút pre sẽ nhảy về bài trc
         private void songControl_PreviousClick(object sender, EventArgs e)
         {
-            if (IsListVN)
-            {
-                ChangeSong(ListVN, 0, -1);
-            }
-            else ChangeSong(ListUS, 0, -1);
+            ChangeSong(curList, 0, -1);
         }
 
         //Khi nhấn nút next sẽ nhảy về bài sau
         private void songControl_NextClick(object sender, EventArgs e)
         {
-            if (IsListVN)
+            ChangeSong(curList, 19, 1);
+        }
+
+        //Xử lý khi check box shuffle thay đổi value
+        private void songControl_ShuffleToggled(bool shuffle)
+        {
+            //Nếu shuffle chuyển từ true sang false thì clear list đã play (listShuffle)
+            if (!shuffle)
             {
-                ChangeSong(ListVN, 19, 1);
+                listShuffle.Clear();
             }
-            else ChangeSong(ListUS, 19, 1);
         }
     }
 }

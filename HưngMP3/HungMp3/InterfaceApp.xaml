@@ -84,7 +84,7 @@
                     <TextBlock Grid.Column="2" x:Name="timeEnd"
                                HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                 </Grid>
-                <Grid Grid.Row="1">
+                <Grid x:Name="gridControl" Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
@@ -95,21 +95,23 @@
                     <!--Các nút điều khiển-->
                     <Button Grid.Column="2" x:Name="btnPlay" Click="Button_Click_1" 
                             Background="White" BorderBrush="White" Margin="64.4,0,64.4,0.2">
-                        <Image Source="D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\Resources\play.png"></Image>
+                        <Image Source="{Binding imagePlay}"></Image>
                     </Button>
-                    <Button Grid.Column="1" Click="Button_Click_2"
+                    <Button x:Name="btnPre" Grid.Column="1" Click="Button_Click_2"
                             Background="White" BorderThickness="0" Margin="145.2,0,9.6,0.2">
-                        <Image Source="D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\Resources\pre.png"></Image>
+                        <Image Source="{Binding imagePre}"></Image>
                     </Button>
-                    <Button Grid.Column="3" Click="Button_Click_3"
+                    <Button x:Name="btnNext" Grid.Column="3" Click="Button_Click_3"
                              Background="White" BorderThickness="0" Margin="9.6,0,145.2,0.2">
-                        <Image Source="D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\Resources\next.png"></Image>
+                        <Image Source="{Binding imageNext}"></Image>
                     </Button>
                     <!--Volume-->
-                    <Image Grid.Column="3" Source="D:\20201\Project I\ProjectI20201\HưngMP3\HungMp3\Resources\audio.png" Grid.ColumnSpan="2" Margin="189.6,0,141,0.2"></Image>
+                    <Image x:Name="imgAudio" Grid.Column="3" Source="{Binding imageAudio}" Grid.ColumnSpan="2" Margin="189.6,0,141,0.2"></Image>
                     <Slider Grid.Column="4" Name="volumeSlider"
                             VerticalAlignment="Center" ValueChanged="ChangeMediaVolume" 
                      Minimum="0" Maximum="1" Value="0.5" Margin="40.8,8,20,0.2" Height="27"/>
+                    <CheckBox x:Name="cbxLoop" Content="Loop current Song" HorizontalAlignment="Left" Margin="41,10,0,0" VerticalAlignment="Top" Width="120"/>
+                    <CheckBox x:Name="cbxShuffle" Content="Shuffle" HorizontalAlignment="Left" Margin="0.2,10,0,0" VerticalAlignment="Top" Grid.Column="1" IsChecked="{Binding Shuffle}" Width="106"/>
 
                 </Grid>
             </Grid>
